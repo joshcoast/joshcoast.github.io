@@ -37,46 +37,81 @@
             <i class="fa fa-pencil" aria-hidden="true"></i>
             Make a Reservation
           </h3>
-          <!-- reservation form -->
+          <!-- reservation form --
           <div class="row reservation-form-container">
             <div class="col-md-12 text-center reservation-form">
-              <form class="pure-form pure-form-stacked form-inline reservations">
-                <div class="form-group">
-                  <input type="text" class="form-control reservation-name" placeholder="Jane Doe">
-                </div>
-                <div class="form-group">
-
-                  
-                  
-                  
-                  
-                  <div class="pure-menu pure-menu-horizontal">
-                    <ul class="pure-menu-list">
-                      <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover"> <a href="#" id="menuLink1" class="pure-menu-link">Select A Day</a>
-                        <ul class="pure-menu-children">
-                          <li class="pure-menu-item"><a href="#" class="pure-menu-link">Today</a></li>
-                          <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tomorrow</a></li>
-                          <li class="pure-menu-item"><a href="#" class="pure-menu-link">The day after next</a></li>
-                        </ul>
-                      </li>
-                    </ul>
+              <form class="pure-form pure-form-stacked form-inline reservation-form">
+                <input type="text" class="form-control reservation-name" placeholder="Jane Doe">
+                <div class="pure-g">
+                  <div class="pure-u-1 pure-u-md-1-2">
+                    <label for="day">Day: </label>
+                    <select id="day" class="pure-u-5-6 reservation-day">
+                      <option value="select">Select a Day</option>
+                      <option value="today">Today</option>
+                      <option value="tomarrow">Tomorrow</option>
+                      <option value="the-day-after">The day after Tomorrow</option>
+                    </select>
                   </div>
-                  
-                  
-                  
-                  
+                  <div class="pure-u-1 pure-u-md-1-2">
+                    <label for="time">Time: </label>
+                    <select id="time" class="pure-u-5-6">
+                      <option value="select">Select a Time</option>
+                      <option value="10am">10am</option>
+                      <option value="11am">11am</option>
+                      <option value="12am">12am</option>
+                      <option value="1pm">1pm</option>
+                      <option value="2pm">2pm</option>
+                      <option value="3pm">3pm</option>
+                      <option value="4pm">4pm</option>
+                      <option value="5pm">5pm</option>
+                    </select>
+                  </div>
                 </div>
-                <button class="btn btn-default reservation-button">Set Reservation</button>
+                <br>
+                <button class="pure-button reservation-button">Set Reservation</button>
               </form>
             </div>
-          </div>
-          <form class="pure-form pure-form-stacked">
-              <label for="name">Your Name</label>
-              <input id="name" type="text" placeholder="Your Name">
-              <label for="day">Reservation Day</label>
-              <input id="day" type="text" placeholder="Reservation Day">
-              <button type="submit" class="pure-button">Confirm</button>
-          </form>
+          </div>-->
+          
+          
+          
+          
+          
+          
+    <form class="form-inline reservation-form">
+      <div class="form-group">
+        <input type="text" class="form-control reservation-name" placeholder="Jane Doe">
+      </div>
+      <div class="form-group">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+            Select A Day
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu reservation-day">
+            <li><a>Today</a></li>
+            <li><a>Tomorrow</a></li>
+            <li><a>The day after next</a></li>
+          </ul>
+        </div>
+      </div>
+      <button class="btn btn-default reservation-button">Set Reservation</button>
+    </form>
+    <ul class="reservations"></ul>
+          
+    <script id="reservation-template" type="text/x-handlebars-template">
+      <li data-id="{{reservationId}}">
+        <p>Hi, {{name}}. Your reservation is all set for {{day}}.</p>
+      </li>
+    </script>
+          
+          
+          
+          
+          
+          
+          
+          
         </div>
         <div class="l-box pure-u-1 pure-u-md-1-2">
           <h3 class="content-subhead">
@@ -87,11 +122,13 @@
             <thead>
               <th>Name</th>
               <th>Day</th>
+              <th>Time</th>
             </thead>
             <tbody> 
               <tr>
                 <td>Jane</td>
                 <td>Tuesday</td>
+                <td>10am</td>
               </tr>
             </tbody>
           </table>
@@ -121,10 +158,14 @@
     <div class="footer l-box is-center"> MONK’S CAFE "The Coffee Shop" </div>
   </div>
   <!-- SCRIPTS -->
+  <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP1kP-6nnV9BsHaYRuyEv3_4iqXKuHj-8&callback=initMap"
     async defer></script>
+  <script src="js/map.js"></script>
+  <script src="js/reservations.js"></script>
+
 </body>
 
 </html>
