@@ -1,0 +1,262 @@
+body {
+  font-family: "Inconsolata", monospace;
+  color: white;
+  background: url(../images/background3.jpg) no-repeat -50px 0 fixed #0e6777;
+  background-size: cover;
+}
+
+.main {
+	max-width: 850px;
+}
+
+img {
+  max-width: 100%;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+.area-title {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.25);
+  display: block;
+  padding: 10px;
+}
+
+/*-- Avatar Shelf --*/
+@media only screen and (min-width:768px) {
+	.avatar-shelf {
+		padding-top: 20px;
+	}
+}
+
+
+/*-- Avatars --*/
+.avatar-inner > span {
+  display: block;
+  width: 100%;
+  line-height: 1.2em;
+}
+
+.avatar {
+  position: relative;
+}
+
+.avatar-inner {
+  margin: 0 5px;
+  padding: 5px;
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr="#00000000",
+      endColorstr="#a6000000",
+      GradientType=0
+    );
+}
+
+.avatar img {
+  position: relative;
+  z-index: 1;
+}
+
+.active-user-fighter .avatar-inner {
+  background: -moz-linear-gradient(
+    top,
+    rgba(59, 130, 144, 0) 0%,
+    rgba(59, 130, 144, 0.65) 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(59, 130, 144, 0) 0%,
+    rgba(59, 130, 144, 0.65) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(59, 130, 144, 0) 0%,
+    rgba(59, 130, 144, 0.65) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr="#003b8290",
+      endColorstr="#a63b8290",
+      GradientType=0
+    );
+}
+
+.active-opponent-fighter .avatar-inner {
+  background: -moz-linear-gradient(
+    top,
+    rgba(109, 8, 8, 0) 0%,
+    rgba(109, 8, 8, 0.65) 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(109, 8, 8, 0) 0%,
+    rgba(109, 8, 8, 0.65) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(109, 8, 8, 0) 0%,
+    rgba(109, 8, 8, 0.65) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr="#006d0808",
+      endColorstr="#a66d0808",
+      GradientType=0
+    );
+}
+
+/*-- Message box --*/
+.message-area {
+  background: url(../images/footer-background.png) no-repeat bottom center
+    transparent;
+  background-size: cover;
+	padding: 10px 10px 0 10px;
+	opacity: 1;
+  transition: all 0.15s cubic-bezier(0.33, 0.66, 0.66, 1);
+}
+.message {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.85);
+  max-width: 65%;
+  color: #202020;
+  font-size: 0.8rem;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  margin: 0 auto 20px auto;
+  left: 50%;
+  transform: translate(-75%, 0);
+}
+.message::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: 30%;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid rgba(255, 255, 255, 0.85);
+}
+.message-area img {
+  display: block;
+  margin: 0 auto;
+	max-width: 130px;
+	margin-bottom: 30px;
+}
+@media only screen and (min-width: 768px) {
+	.message {
+		max-width: 400px;
+		font-size: 1.25rem;
+	}
+}
+@media only screen and (min-width: 1024px) {
+	.message-area img {
+		max-width: 170px;
+	}
+}
+@media only screen and (min-width: 1440px) {
+	.message-area img {
+		max-width: 190px;
+	}
+}
+
+/*-- Win screen --*/
+.win-screen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 10;
+}
+
+.win-screen-inside {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  max-width: 500px;
+}
+
+.win-screen-inside h1 {
+  position: relative;
+  font-size: 1.25rem;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  display: block;
+  color: #202020;
+}
+
+.win-screen-inside h1:before {
+  content: "";
+  position: absolute;
+  bottom: -19px;
+  left: 30%;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid white;
+}
+
+.win-screen-inside img {
+  display: block;
+  margin: 20px auto;
+}
+
+.win-screen-inside button {
+  display: block;
+  margin: 20px auto;
+}
+
+/*-- Fighting Ring --*/
+.fighting-ring {
+  border-top: 5px solid #6d0808;
+}
+.fight-ring-avatar {
+  width: 100%;
+}
+
+/*-- Sticky Footer --*/
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Avoid the IE 10-11 `min-height` bug. */
+}
+.main {
+  flex: 1 0 auto; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+}
+
+.message-area {
+  flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+}
+
+/* -- Tools -- */
+.hide {
+  display: none !important;
+}
+.visually-hidden {
+  opacity: 0;
+  transition: all 0.15s cubic-bezier(0.33, 0.66, 0.66, 1);
+}
