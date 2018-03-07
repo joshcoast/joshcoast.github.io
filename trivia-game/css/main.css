@@ -1,0 +1,196 @@
+/*-- Resets and tools --*/
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+html {
+	background: url("../img/background-2.jpg") no-repeat left center rgb(43, 43, 43);
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+h1 {
+	font-family: 'Shrikhand', cursive;
+}
+
+.stop-clicks {
+	pointer-events: none !important;
+}
+
+button,
+.choice-list button {
+	color: #0E1C23;
+	line-height: 1.4em;
+	padding: .5em 1em;
+}
+
+@media only screen and (min-width: 1024px) {
+	html {
+		background: url("../img/background-3.jpg") no-repeat center center rgb(43, 43, 43);
+		background-size: cover;
+		background-attachment: fixed;
+	}
+}
+
+/* -- Layout --*/
+
+.main-inner {
+	max-width: 830px;
+	padding: .5rem 1rem;
+	margin: 0 auto;
+	position: relative;
+}
+
+.game-content {
+	background: rgba(0, 0, 0, 0.5);
+	text-align: center;
+	margin: .5rem 0;
+	padding: 1rem;
+}
+
+@media only screen and (min-width: 640px) {
+	.main-inner {
+		padding: 2rem 1rem;
+	}
+	.game-content {
+		margin: 2rem 1rem;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.main-inner {
+		padding: 2rem 3rem;
+	}
+}
+
+/*-- Header --*/
+
+.main-header {
+	background-color: rgba(34, 34, 34, .8);
+	color: white;
+	text-align: center;
+	padding: .5rem 1rem;
+	font-family: 'Shrikhand', cursive;
+	font-size: 1.3rem;
+}
+@media only screen and (min-width: 1024px) {
+	.main-header {
+		font-size: 2.3rem;
+	}
+}
+
+/* -- TV Section --*/
+
+.tv {
+	position: relative;
+}
+
+.time {
+	position: absolute;
+	bottom: 13px;
+	right: 16px;
+	width: 43px;
+	background: #292821;
+	font-family: 'VT323', monospace;
+	font-size: 1.9rem;
+	line-height: 1em;
+	text-align: right;
+	color: #b11818;
+	padding: .25rem 0.5rem;
+	border-radius: 5px;
+	box-shadow: inset 0 0 8px 2px #000000b5;
+	border: 1px solid #646560;
+	z-index: 9;
+}
+
+.tv>img {
+	z-index: 2;
+	position: relative;
+	pointer-events: none;
+}
+
+.tv-show {
+	position: absolute;
+	top: 10%;
+	left: 6.5%;
+	z-index: 0;
+	width: 68%;
+}
+
+@media only screen and (min-width:640px) {
+	.time {
+		bottom: 15px;
+		right: 15px;
+		width: 13.2%;
+		font-size: 2.85rem;
+		border: 2px solid #646560;
+	}
+}
+
+/*-- Messages --*/
+
+.message {
+	background: rgba(0, 0, 0, 0.75);
+	color: white;
+	transition: all .15s cubic-bezier(.33, .66, .66, 1);
+}
+
+.message button {
+	margin-top: 0.25rem;
+}
+
+.message.show {
+	display: table;
+	opacity: 1;
+}
+
+.message.hide {
+	display: table;
+	opacity: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+ .message {
+	font-size: 1.7em;
+	line-height: 2em;
+	padding: 60px;
+ }
+ .message .uk-icon svg {
+	width: 100px;
+	height: 100px;
+ }
+}
+
+/*-- Game Question Area --*/
+
+.question {
+	color: white;
+}
+
+@media only screen and (min-width: 1024px ){
+	.question {
+		font-size: 1.25em;
+		padding: 0 1em;
+	}
+}
+
+/* -- Start Screen -- */
+
+.start-screen {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #486F7A;
+	z-index: 10;
+	background: url("../img/background-2.jpg") no-repeat center center;
+	background-size: cover;
+}
